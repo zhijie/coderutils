@@ -1,3 +1,4 @@
+<?php include("config.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,17 +12,17 @@
         <title>coder utils</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>" rel="stylesheet">
+        <link href="<?php echo OZROOT_PATH.("assets/css/bootstrap.min.css"); ?>" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="<?php echo base_url("assets/css/style.css"); ?> rel="stylesheet">
+        <link href="<?php echo OZROOT_PATH.("assets/css/style.css"); ?> rel="stylesheet">
 
         <!-- Placed at the end of the document so the pages load faster -->
-        <script src="<?php echo base_url("assets/js/jquery.min.js"); ?>"></script>
-        <script src="<?php echo base_url("assets/js/bootstrap.min.js"); ?>"></script>
+        <script src="<?php echo OZROOT_PATH.("assets/js/jquery.min.js"); ?>"></script>
+        <script src="<?php echo OZROOT_PATH.("assets/js/bootstrap.min.js"); ?>"></script>
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="<?php echo base_url("assets/js/ie10-viewport-bug-workaround.js"); ?>"></script>
-        <script src="<?php echo base_url("assets/js/scripts.js"); ?>"></script>
+        <script src="<?php echo OZROOT_PATH.("assets/js/ie10-viewport-bug-workaround.js"); ?>"></script>
+        <script src="<?php echo OZROOT_PATH.("assets/js/scripts.js"); ?>"></script>
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -47,19 +48,19 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <?php $current_url=end($this->uri->segment_array()); ?>
+                <?php $current_url="http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
                 
                 <li <?php if(strcmp('/',$current_url) == 0) echo "class='active'"; ?> >
-                    <a href="<?php echo FCPATH."/"; ?>">Home</a>
+                    <a href="<?php echo OZROOT_PATH."/"; ?>">Home</a>
                 </li>
                 <li <?php if(strcmp('color',$current_url) == 0) echo "class='active'"; ?> >
-                    <a href="<?php echo FCPATH."/index.php?color"; ?>">Color</a>
+                    <a href="<?php echo OZROOT_PATH."/color"; ?>">Color</a>
                 </li>
                 <li <?php if(strcmp('json',$current_url) == 0) echo "class='active'"; ?> >
-                    <a href="<?php echo FCPATH."/index.php?json"; ?>">Json</a>
+                    <a href="<?php echo OZROOT_PATH."/json"; ?>">Json</a>
                 </li>
                 <li <?php if(strcmp('code_formatter',$current_url) == 0) echo "class='active'"; ?> >
-                    <a href="<?php echo FCPATH."/index.php?code_formatter"; ?>">Code Prettifier</a>
+                    <a href="<?php echo OZROOT_PATH."/code_formatter"; ?>">Code Prettifier</a>
                 </li>
             </ul>
         </div><!--/.nav-collapse -->
